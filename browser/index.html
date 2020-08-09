@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[browser] page list</title>
+</head>
+<style>
+  .anchor-list {
+    width: 3em;
+  }
+  .anchor {
+    color: navy;
+  }
+  .anchor:hover {
+    cursor: pointer;
+  }
+</style>
+<body>
+  <h1>page list (browser)</h1>
+  <ul class="anchor-list">
+    <li class="anchor" data-href='./page1.html'>
+      page1
+    </li>
+    <li class="anchor" data-href='./page2.html'>
+      page2
+    </li>
+    <li class="anchor" data-href='./page3.html'>
+      page3
+    </li>
+  </ul>
+  <script>
+    var anchors = document.querySelector('.anchor-list');
+
+    Array.from(anchors.children).forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        var url = e.target.dataset.href;
+        location.href = url;
+      })
+    })
+  </script>
+</body>
+</html>

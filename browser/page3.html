@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[browser] page3</title>
+</head>
+<style>
+  .to-list {
+    color: navy;
+  }
+  .to-list:hover {
+    cursor: pointer;
+  }
+</style>
+<body>
+  <h1>page3</h1>
+  <span class="to-list" data-href="/browser">back to list</span>
+  <script>
+    var anchor = document.querySelector('.to-list');
+
+    anchor.addEventListener('click', (e) => {
+      var url = e.target.dataset.href;
+      location.href = url;
+    });
+  </script>
+</body>
+</html>
